@@ -1,0 +1,33 @@
+{
+  "name": "joy_us",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "prettier": "3.0.3",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  },
+  "description": "joy us client built by Next.js",
+  "main": "index.js",
+  "author": "Wayne JSNoob <wenpeijs@gmail.com>",
+  "license": "MIT"
+}
