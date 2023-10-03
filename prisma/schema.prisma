@@ -1,0 +1,37 @@
+// This prisma schema follows Prisma docs
+// More to read: https://www.prisma.io/docs/concepts/components/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  email       String   @unique
+  phoneNumber String?
+  firstName   String
+  lastName    String
+  role        Role     @default(STANDARD_USER)
+  events      Event[]
+}
+
+model Event {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  published Boolean  @default(false)
+  author    User?    @relation(fields: [authorId], references: [id])
+  authorId  Int?
+}
+
+enum Role {
+  STANDARD_USER
+  PREMIUM_USER
+  BUSINESS_USER
+}

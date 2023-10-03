@@ -1,4 +1,10 @@
 {
+  "env": {
+    "node": true,
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
   "extends": [
     "next/core-web-vitals",
     "airbnb",
@@ -16,6 +22,21 @@
       {
         "namedComponents": "arrow-function"
       }
-    ]
+    ],
+    /*
+      This custom rule is depending on team's coding standard.
+      Please read: https://eslint.org/docs/latest/rules/arrow-body-style
+
+      I set this to always have braces around the function body.
+      Current behavior:
+        const foo = () => { return 0 }
+
+      If team would prefer:
+        const foo = () => 0;
+        
+      Please modify rule down-below to:
+        "arrow-body-style": ["error", "never"]
+    */
+    "arrow-body-style": ["error", "always"]
   }
 }
